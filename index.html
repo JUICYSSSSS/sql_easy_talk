@@ -6,7 +6,7 @@
   <meta name="description" content="SQL-Easy Talk — Traduce frases en español a consultas SQL de forma interactiva. Plataforma educativa de compiladores.">
   <title>SQL-Easy Talk ⚡ — Intérprete Interactivo</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -32,6 +32,14 @@
         <div class="login-brand-icon">⚡</div>
         <h1 class="login-brand-title">SQL-Easy Talk</h1>
         <p class="login-brand-sub">Intérprete Interactivo de Lenguaje Natural a SQL</p>
+      </div>
+
+      <div class="login-language-control">
+        <label for="login-language-select" data-i18n="languageLabel">🌐 Idioma</label>
+        <select class="select-input" id="login-language-select" aria-label="Idioma de la interfaz">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
       </div>
 
       <!-- Login Card -->
@@ -128,6 +136,13 @@
       </button>
     </nav>
     <div class="sidebar-footer">
+      <div class="sidebar-language">
+        <label for="language-select" data-i18n="languageLabel">🌐 Idioma</label>
+        <select class="select-input" id="language-select" aria-label="Idioma de la interfaz">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </div>
       <div class="sidebar-profile">
         <div class="profile-avatar">
           <span class="profile-icon">👤</span>
@@ -509,6 +524,16 @@ Ejemplo válido:
 
       <div class="config-section">
         <div class="config-row">
+          <div class="config-label" data-i18n="languageLabel">
+            🌐 Idioma de la interfaz
+            <small data-i18n="languageDescription">Elige el idioma de la interfaz de la aplicación</small>
+          </div>
+          <select class="select-input" id="config-language-select" aria-label="Idioma de la interfaz">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+        <div class="config-row">
           <div class="config-label">
             🐬 Dialecto SQL Destino
             <small>Define el formato de salida de las consultas generadas</small>
@@ -590,6 +615,6 @@ Ejemplo válido:
 
   </main>
 
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>

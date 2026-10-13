@@ -7,22 +7,22 @@
 
 /* --- Design Tokens --- */
 :root {
-  --bg-primary: #0E1117;
-  --bg-secondary: #161B22;
-  --bg-card: #1C2128;
-  --bg-elevated: #21262D;
-  --bg-console: #0D1117;
-  --border: #30363D;
-  --border-light: #3B3B3B;
-  --text-primary: #C9D1D9;
-  --text-secondary: #8B949E;
-  --text-muted: #6E7681;
-  --accent: #2E86C1;
-  --accent-hover: #21618C;
-  --accent-glow: rgba(46, 134, 193, 0.15);
-  --accent-strong: rgba(46, 134, 193, 0.4);
-  --green: #39FF14;
-  --green-dim: rgba(57, 255, 20, 0.08);
+  --bg-primary: #0B1020;
+  --bg-secondary: #10182B;
+  --bg-card: #151F35;
+  --bg-elevated: #1B2942;
+  --bg-console: #080D19;
+  --border: #273550;
+  --border-light: #3A4B6A;
+  --text-primary: #E6EDF7;
+  --text-secondary: #A8B5CA;
+  --text-muted: #8190A9;
+  --accent: #70A5FF;
+  --accent-hover: #5488ED;
+  --accent-glow: rgba(112, 165, 255, 0.15);
+  --accent-strong: rgba(112, 165, 255, 0.4);
+  --green: #6EE7B7;
+  --green-dim: rgba(110, 231, 183, 0.08);
   --red: #E74C3C;
   --red-bg: rgba(231, 76, 60, 0.1);
   --yellow: #F0AD4E;
@@ -30,9 +30,9 @@
   --sql-symbol: #D4D4D4;
   --sql-table: #4EC9B0;
   --sql-operator: #CE9178;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --radius-lg: 20px;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-lg: 22px;
   --transition: 0.2s ease;
   --sidebar-w: 240px;
   --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1872,4 +1872,178 @@ body {
   .login-brand-title {
     font-size: 1.5rem;
   }
+}
+
+/* Refined palette, clearer focus states, and a calmer glass surface treatment. */
+body {
+  background:
+    radial-gradient(ellipse at 88% 4%, rgba(79, 100, 190, 0.12), transparent 36%),
+    var(--bg-primary);
+}
+
+.sidebar {
+  background: rgba(16, 24, 43, 0.96);
+  border-right-color: rgba(129, 150, 190, 0.16);
+  box-shadow: 12px 0 40px rgba(3, 8, 20, 0.18);
+}
+
+.sidebar-language {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.sidebar-language label {
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.sidebar-language .select-input {
+  width: 100%;
+  min-width: 0;
+}
+
+.sidebar-profile,
+.config-section,
+.academy-card,
+.history-item,
+.symbol-panel,
+.info-panel {
+  box-shadow: 0 14px 36px rgba(3, 8, 20, 0.16);
+}
+
+.nav-btn {
+  margin: 2px 10px;
+  width: calc(100% - 20px);
+  padding-right: 14px;
+  padding-left: 16px;
+  border-radius: 10px;
+}
+
+.nav-btn::before {
+  left: -10px;
+}
+
+.nav-btn.active {
+  background: linear-gradient(100deg, rgba(112, 165, 255, 0.16), rgba(112, 165, 255, 0.04));
+}
+
+.hero {
+  padding-top: 72px;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+}
+
+.pipeline-step,
+.feature-card {
+  background: rgba(21, 31, 53, 0.72);
+  border-color: rgba(129, 150, 190, 0.2);
+  box-shadow: 0 12px 34px rgba(3, 8, 20, 0.16);
+}
+
+.view-title {
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  letter-spacing: -0.04em;
+}
+
+.text-input,
+.console,
+.token-table-wrap,
+.config-section {
+  border-color: rgba(129, 150, 190, 0.22);
+}
+
+.config-section {
+  background: linear-gradient(145deg, rgba(21, 31, 53, 0.96), rgba(16, 24, 43, 0.96));
+}
+
+.btn,
+.nav-btn,
+.resource-link,
+.academy-card,
+.feature-card,
+.pipeline-step {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:where(button, input, select, a):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    box-shadow: 24px 0 64px rgba(3, 8, 20, 0.42);
+  }
+
+  .hero {
+    padding-top: 76px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .config-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .config-row .select-input {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.login-container {
+  gap: 20px;
+}
+
+.login-language-control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+  margin: -8px 0;
+}
+
+.login-language-control label {
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.login-language-control .select-input {
+  min-width: 132px;
 }
